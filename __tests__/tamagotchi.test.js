@@ -42,7 +42,7 @@ describe('Should create new tamagotchi', () => {
 
   test('should return strong warning at sleep level 10', () => {
     jest.advanceTimersByTime(2700001);
-    expect(tamagotchi.warning).toEqual("Warning: Your pet will pass out from exhaustion.");
+    expect(tamagotchi.sleepWarning).toEqual("Warning: Your pet will pass out from exhaustion.");
   });
   
   test('should return sleep level', () => {
@@ -52,7 +52,7 @@ describe('Should create new tamagotchi', () => {
   
   test('should return gentle warning at sleep level 30', () => {
     jest.advanceTimersByTime(2100001);
-    expect(tamagotchi.warning).toEqual("Warning: Your pet needs to sleep soon.");
+    expect(tamagotchi.sleepWarning).toEqual("Warning: Your pet needs to sleep soon.");
   });
 
   test('should return sleep level', () => {
@@ -67,8 +67,77 @@ describe('Should create new tamagotchi', () => {
 
   test('should return sleeping as true when tamagotchi passes out', () => {
     jest.advanceTimersByTime(3000001);
-    expect(tamagotchi.warning).toEqual("Your tamagotchi passed out.");
+    expect(tamagotchi.sleepWarning).toEqual("Your tamagotchi passed out.");
   });
 
+  test('should return eat level', () => {
+    jest.advanceTimersByTime(700001);
+    expect(tamagotchi.food).toEqual(30);
+  });
+
+  test('should return eat level', () => {
+    jest.advanceTimersByTime(700001);
+    expect(tamagotchi.foodWarning).toEqual("Warning: Your pet needs to eat soon.");
+  });
+
+  test('should return eat level', () => {
+    jest.advanceTimersByTime(900001);
+    expect(tamagotchi.food).toEqual(10);
+  });
+
+  test('should return eat level', () => {
+    jest.advanceTimersByTime(900001);
+    expect(tamagotchi.foodWarning).toEqual("Warning: Your pet will die from hunger soon.");
+  });
+
+  test('should return food level 0', () => {
+    jest.advanceTimersByTime(1000001);
+    expect(tamagotchi.food).toEqual(0);
+  });
+
+  test('should return alive as false when tamagotchi dies of hunger', () => {
+    jest.advanceTimersByTime(1000001);
+    expect(tamagotchi.alive).toEqual(false);
+  });
+
+  test('should return warning when tamagotchi died', () => {
+    jest.advanceTimersByTime(1000001);
+    expect(tamagotchi.foodWarning).toEqual("Your tamagotchi has died.");
+  });
+
+  // calculate food tests
+
+  test('should return play level', () => {
+    jest.advanceTimersByTime(1400001);
+    expect(tamagotchi.play).toEqual(30);
+  });
+
+  test('should return eat level', () => {
+    jest.advanceTimersByTime(1400001);
+    expect(tamagotchi.playWarning).toEqual("Warning: Your pet needs to play soon.");
+  });
+
+  test('should return play level', () => {
+    jest.advanceTimersByTime(1800001);
+    expect(tamagotchi.play).toEqual(10);
+  });
+
+  test('should return eat level', () => {
+    jest.advanceTimersByTime(1800001);
+    expect(tamagotchi.playWarning).toEqual("Warning: Your pet will die from living such a lame life");
+  });
+
+  test('should return play level', () => {
+    jest.advanceTimersByTime(2000001);
+    expect(tamagotchi.play).toEqual(0);
+  });
+
+  test('should return eat level', () => {
+    jest.advanceTimersByTime(2000001);
+    expect(tamagotchi.playWarning).toEqual("Your tamagotchi has critically bored. It will now lose food and sleep points at twice the normal rate");
+  });
+
+  
+  
 
 });
