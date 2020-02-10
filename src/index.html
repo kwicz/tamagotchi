@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Galactic Age Calculator</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <div class="container-fluid login-block">
+    <div class="jumbotron" id="header">
+      <h1>The Halo Group</h1>
+    </div>
+    <div class="container landing">
+      <div class="row starting-form">
+        <div class="col-md-4 login-sec">
+          <h2 class="text-center">Help Us Tailor Your Experience</h2>
+          <form id="form">
+            <div class="form-label-group">
+              <input type="number" id="age" class="form-control" placeholder="Current Age" required autofocus>
+            </div>
+            <div class="form-label-group">
+              <input type="number" id="cryoYears" class="form-control" placeholder="Cryogenic Years Planned" required autofocus>
+            </div>
+            <button type="submit" class="btn btn-secondary" id="seePackages">See Packages</button>
+          </form>
+          <div class="copy-text">Created with <i class="fa fa-heart"></i> by The Halo Group</div>
+        </div>
+        <div class="col-md-8 banner-sec">
+          <br>
+          <h1>We are The Halo Group.</h1>
+          <p>We are leading the way in space travel and technology. Everyday, we are making breakthroughs in exploration, research, and opening the skies to all of humanity.</p>
+          <h4>Space Travel</h4>
+          <p>Space travel was once only for astronauts, but we have developed 6 top-speed cruisers for commercial travel. Our luxury solar system cruisers are equipped with high-speed satellite communication, observation decks, and themed hot-tubs</p>
+          <h4>Cryogenic Freezing</h4>
+          <p>Everyday, humanity is making new discoveries that will eventually allow us to travel farther and faster than ever before.  Many of our travelers choose to wait up to 300 years before embarking on their inter-planetary journey.</p>
+          <h4>Tailored Journey</h4>
+          <p>Not sure where or when to disembark on your adventure? Provide us with a few details about yourself to begin the your process.</p>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="container-fluid pricing py-5 hidden">
+      <div class="jumbotron" id="info">
+        <div class="row">
+          <div class="col-md-4">
+            <iframe src="https://giphy.com/embed/YqopropuC719C" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+          </div>
+          <div class="col-md-8">
+            <h3>Age is different out here.</h3>
+            <p>When planning for your trip, please bare in mind that due to orbiting distances and speeds, the length of a year will vary from planet to planet.  While length of a planet's year will not affect the length of your life, please consider the calculations in each of our packages if you are deeply emotionally invested in birthday parties.</p>
+            <p>*Remaining Life Expectancy includes cryogenically frozen years.</p>
+            <p>*Prices are an approximation and are subject to change.</p>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="card mb-5 mb-lg-0">
+              <div class="card-body">
+                <h5 class="card-title text-muted text-uppercase text-center">Mercury</h5>
+                <h6 class="card-price text-center">$6.3 million</h6>
+                <hr>
+                <ul id="mercury-results">
+                </ul>
+                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal">
+                  Select Package
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card mb-5 mb-lg-0">
+              <div class="card-body">
+                <h5 class="card-title text-muted text-uppercase text-center">Venus</h5>
+                <h6 class="card-price text-center">$4.7 million</h6>
+                <hr>
+                <ul id="venus-results">
+                </ul>
+                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal">
+                  Select Package
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title text-muted text-uppercase text-center">Mars</h5>
+                <h6 class="card-price text-center">$2.8 million</h6>
+                <hr>
+                <ul id="mars-results">
+                </ul>
+                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal">
+                  Select Package
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="card mb-5 mb-lg-0">
+              <div class="card-body">
+                <h5 class="card-title text-muted text-uppercase text-center">Jupiter</h5>
+                <h6 class="card-price text-center">$14 million</h6>
+                <hr>
+                <ul id="jupiter-results">
+                </ul>
+                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal">
+                  Select Package
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card mb-5 mb-lg-0">
+              <div class="card-body">
+                <h5 class="card-title text-muted text-uppercase text-center">Saturn</h5>
+                <h6 class="card-price text-center"><i>Coming Soon</i></h6>
+                <hr>
+                <ul id="saturn-results">
+                  <li>Your age on Saturn: <i>Coming Soon</i>
+                  <li>Life Expectancy: <i>Coming Soon</i>
+                  </ul>
+                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal">
+                  Select Package
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title text-muted text-uppercase text-center">Uranus</h5>
+                <h6 class="card-price text-center"><i>Coming Soon</i></h6>
+                <hr>
+                <ul id="uranus-results">
+                  <li>Your age on Uranus: <i>Coming Soon</i>
+                  <li>Life Expectancy: <i>Coming Soon</i>
+                </ul>
+                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal">
+                  Select Package
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Thank you for selecting a package.  Our representatives will be in touch soon.</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-label-group">
+              <input type="text" id="first-name" class="form-control" placeholder="First Name" required autofocus>
+            </div>
+            <div class="form-label-group">
+              <input type="text" id="last-name" class="form-control" placeholder="Last Name" required autofocus>
+            </div>
+            <div class="form-label-group">
+              <input type="email" id="email" class="form-control" placeholder="Email Address" required autofocus>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-secondary" data-dismiss="modal">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

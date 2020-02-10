@@ -1,0 +1,184 @@
+@import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
+
+html {
+  background-color: #7f5a83;
+  background-image: linear-gradient(315deg, #0d324d 0%, #7f5a83 74%);
+}
+
+.jumbotron {
+  box-shadow:15px 20px 0px rgba(0,0,0,0.1);
+}
+
+#header {
+  background-image: url("https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/planet-of-solar-system-jupiter-and-ocean-with-big-waves-serkan-uzunyol.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#header h1 {
+  color: #0D324D;
+  font-weight: bolder;
+  font-size: 80px;
+  font-family: Futura;
+}
+
+.login-block {
+  float:left;
+  width:100%;
+  padding : 50px 0;
+  text-align: center;
+}
+
+.banner-sec {
+  background:url(https://wallpaperplay.com/walls/full/1/8/3/364649.jpg)  no-repeat left bottom; 
+  background-size:cover; 
+  min-height:500px; 
+  border-radius: 0 10px 10px 0; 
+  padding:0;
+  color: white;
+  text-align: left;
+}
+
+.landing {
+  background:#fff; 
+  border-radius: 10px; 
+  box-shadow:15px 20px 0px rgba(0,0,0,0.1);
+}
+
+.carousel-inner {
+  border-radius:0 10px 10px 0;
+}
+
+.carousel-caption {
+  text-align:left; 
+  left:5%;
+}
+
+.login-sec {
+  padding: 50px 30px; 
+  position:relative;
+}
+
+.login-sec .copy-text {
+  position:absolute; 
+  width:80%; 
+  bottom:20px; 
+  font-size:13px; 
+  text-align:center;
+}
+
+.login-sec .copy-text i {
+  color:#7F5A83;
+}
+
+.login-sec h2 {
+  margin-bottom:30px; 
+  font-weight:800; 
+  font-size:30px; 
+  color: #0D324D;
+}
+
+.login-sec h2:after {
+  content:" "; 
+  width:100px; 
+  height:5px; 
+  background:#7F5A83; 
+  display:block; 
+  margin-top:20px; 
+  border-radius:3px; 
+  margin-left:auto;
+  margin-right:auto
+}
+
+.banner-text {
+  width:70%; 
+  position: absolute; 
+  bottom:40px; 
+  padding-left:20px;
+
+}
+
+.banner-text h2 {
+  color:#fff; 
+  font-weight:600;
+}
+
+.banner-text h2:after {
+  content:" "; 
+  width:100px; 
+  height:5px; 
+  background:#FFF; 
+  display:block; 
+  margin-top:20px; 
+  border-radius:3px;
+}
+
+.banner-text p {
+  color:#fff;
+}
+
+form .btn {
+  width: 100%;
+  background: #0D324D; 
+  color:#fff; 
+  font-size: 80%;
+  border: none;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+  transition: all 0.2s;
+}
+
+.card .btn {
+  width: 100%;
+  background: #0D324D; 
+  color:#fff; 
+  font-size: 80%;
+  border: none;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+  transition: all 0.2s;
+}
+
+.modal .btn {
+  width: 100%;
+  background: #0D324D; 
+  color:#fff; 
+  font-size: 80%;
+  border: none;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+  transition: all 0.2s;
+}
+
+.form-label-group {
+  margin-bottom: 8px;
+}
+
+.card {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 10px; 
+  box-shadow:15px 20px 0px rgba(0,0,0,0.1);
+}
+
+ul {
+  list-style: none;
+  padding: 0px 0px 0px 0px;
+}
+
+.hidden {
+  display:none;
+}
+
+iframe {
+  height: 100%;
+}
+
+#info {
+  text-align: left;
+  color: #0D324D;
+  padding: 20px 20px 20px 20px;
+}
