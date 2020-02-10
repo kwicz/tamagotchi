@@ -1,4 +1,4 @@
-import { UserAge } from './userAge.js'; 
+import { Tamagotchi } from './tamagotchi.js'; 
 import './styles.css';
 import $ from 'jquery';
 import 'bootstrap';

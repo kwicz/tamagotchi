@@ -1,93 +1,92 @@
-# _Galactic Age Calculator_
+# _Tamagotchi_
 
-#### Description 
-_Calculate a user's age and life expectancy on each planet.
- Feb 2020._
+#### _Care for a Tamagotchi creature by feeding it, playing with it, and making sure it gets enough sleep. | Feb. 2020_
 
-#### By _**K. Wicz**_
-
-## Preview
-
-![Landing Page Preview](landing-page.png)
-
-**[View Live Preview](https://admiring-hodgkin-6c8b1d.netlify.com/)**
+#### By _**Alex Skreen and K. Wicz**_
+[link to demo site coming](#)
 
 ## Description
 
-Inspired by the Sci-Fi Trilogy _Remembrance of Earth's Past_ by Cixin Liu, this site allows users to plan for inter-solar system travel with the fictitious space travel organization, The Halo Group.  This Halo Group website will allow their customers to enter their age and how many years they plan to be cryogenically frozen to see how many years old they would be and the difference in their age and their estimated life expectancy on different planets that are part of a travel package.
+_This boilerplate site has one index.html file that is already linked to the included bootstrap.css(4.4), styles.css, jQuery.js(3.4.1), and scripts.js._
 
-## Project Specifications
 
-|Behavior|Input|Output|
-|---|:---:|:---:|
-|User inputs age|--|error|
-||"twenty"|error|
-|User inputs age under 80|20|60 (years until estimated life expectancy)
-|User inputs age over 80|90|10 (years past estimated life expectancy)|
-|User inputs preferred cryogenically frozen years|20|est. life expectancy + 20|
-|User over 80 inputs preferred cryogenically frozen years|20|error|
-|User selects planet|Mercury|Earth age / .24|
-||20|Estimated total years left / .24|
-||90|Estimated years over / .24|
-|User selects planet|Venus|Earth age / .62|
-||20|Estimated total years left / .62|
-||90|Estimated years over / .62|
-|User selects planet|Mars|Earth age / 1.88|
-||20|Estimated total years left / 1.88|
-||90|Estimated years over / 1.88|
-|User selects planet|Jupiter|Earth age / 11.86|
-||20|Estimated total years left / 11.86|
-||90|Estimated years over / 11.86|
+There is a pre-built two input form with a submit button. There is also a simple jQuery function that will console.log when the submit button is clicked.
+
+The .gitignore file is a template for mac osx but a link is provided to get a template for any operating system. 
+
+[create a .gitignore template for your os here](https://www.gitignore.io/)
 
 ## Setup/Installation Requirements
 
-_In Terminal:_
+_Make sure you have [git version control](https://git-scm.com/downloads) installed on your computer._
 
-* Navigate to where you want this application to be saved, i.e.:
-```cd desktop```
-* Clone the file from GitHub with HTTPS
-```git clone https://github.com/kwicz/galactic-age-calculator.git```
-* Open file in your preferred text editor
-* On Mac: ```open -a {your text editor} galactic-age-calculator```
-* On Windows: ```galactic-age-calculator```
+1. find the green 'Clone or Download' button and copy the link
+2. open terminal and type...
 
-_Download Manually:_
+**Windows**
+```sh 
+cd desktop
+```
 
-* Navigate to https://github.com/kwicz/galactic-age-calculator.
-* Click green "Clone or Download" button.
-* Click "Download ZIP".
-* Click downloaded file to unzip.
-* Open folder called "galactic-age-calculator".
-* Right click "index.html" and select your preferred browser or text editor.
+ Mac & linux 
+ ```sh
+ cd ~/Desktop
+ ```
 
-## Future Additions
+ 3. in terminal type '_git clone {link to repository}_ '
 
-* Add planet images.
-* Add planet informational details.
-* Add functionality for Saturn and Uranus.
+```sh
+git clone Link-Here
+```
 
-## Known Bugs
+4. navigate to the new folder that was created on your desk
+5. select index.html
+6. right click on the file and select _'open with'_
+7. select your browser
+8. enjoy this project
 
-_No known bugs at this time._
 
-## Support and contact details
+## Specs
+### Behavior Driven Development Spec List
 
-_Have a bug or an issue with this application? [Open a new issue](https://github.com/kwicz/galactic-age-calculator/issues) here on GitHub._
+Behavoir | Input | Output
+:---------:|:------:|:------:
+| A user creates a new Tamagotchi | Name | New Tamagotchi |
+| A user can name their Tamagotchi | Name | Tamagotchi named 'Name' |
+| The program will set all Tamagotchi stats to 100 | Name | Sleep: 100, Food: 100, Play: 100 |
+The program will reduce food by 1 point every 10 seconds | 1 minute | Food: 94 |
+The user can increase their Tamagotchi's Food stat by 20 points by feeding it | Feeding after 5 minutes | Food: 90 |
+The program will reduce play by 1 point every 20 seconds | 1 minute | Food: 97 |
+The user can increase their Tamagotchi's Play stat by 20 points by playing with it | Playing after 10 minutes | Play: 90 |
+The program will reduce sleep by 1 point every 30 seconds | 1 minute | Food: 98 |
+The user can increase their Tamagotchi's Sleep stat by 100 points by feeding it | sleeps for 10 minutes | Sleep: 100 |
+| The program will warn you once any of your stats go below 30 | Sleep: 29 | Warning: Your Tomagatichi needs to sleep |
+| The program will give you a strong warning once any of your stats go below 10 | Food 9 | Warning: If you don't feed your Tomagatchi, it could perish |
+| The program will put your Tomagatchi to sleep if it's Sleep stat hits 0 | Sleeps for 10 minutes | Sleep: 100 |
+| The program will kill your Tomagatchi if it's Food stat hits 0 | Food: 0 | Your tomagatchi has died |
+| The program will start to increase the rate at which your food and sleep go down by 2x if your Play stat hits 0 | Play: 0 | Food decreases 1 points ever 5 seconds, Sleep decreases 1 points every 15 seconds |
 
-## Technologies Used
 
-* Node.js
-* Webpack
-* Javascript
-* jQuery
-* Jest
-* HTML & CSS
-* Bootstrap 4
-* [Bootsnipp](https://bootsnipp.com/snippets/351Vo)
-* [Start Bootstrap](https://startbootstrap.com/snippets/pricing-table/)
+## Support 
+
+_The software is provided as is. It might work as expected - or not. Just don't blame me._
+
+
+## Built With
+
+* [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) - Simple Scaffolding
+* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) - Used for interactivity in the page
+* [jQuery](https://jquery.com/) - Used to interact with the DOM
+* [Bootstrap 4.4](https://getbootstrap.com/) - Used for styling
+* [webpack](https://webpack.js.org/)
+* [ESLint](https://eslint.org/)
+* [Node.js](https://nodejs.org/en/)
+* [Uglifyjs](https://www.uglifyjs.net/)
+
 
 ### License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-Copyright (c) 2020 **_K. Wicz_**
+Copyright (c) 2020 **_Alex Skreen and K. Wicz_**
+
