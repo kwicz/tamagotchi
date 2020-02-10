@@ -152,8 +152,10 @@ describe('Should create new tamagotchi', () => {
 
   test("this should reset food stat to 100", () => {
     expect(tamagotchi.feedTamagotchi()).toEqual("All full!")
-
   });
 
+  test("this should reset play stat to 100", () => {
+    expect(tamagotchi.playTamagotchi()).toEqual("All tuckered out!")
+  });
 
 });

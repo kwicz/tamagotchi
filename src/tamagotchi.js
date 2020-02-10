@@ -71,4 +71,10 @@ export class Tamagotchi {
     console.log("food:" + this.food)
     return "All full!"
   }
+
+  playTamagotchi() {
+    this.play = 100;
+    console.log("food:" + this.food)
+    return "All tuckered out!"
+  }
 }
