@@ -42,19 +42,27 @@ export class Tamagotchi {
         this.alive = false;
       }
     }, 10000);
-}
+  }
 
-calculatePlay() {
-  setInterval(() => {
-    this.play--;
-    if (this.play === 30) {
-      this.playWarning = "Warning: Your pet needs to play soon.";
-    } else if (this.play === 10) {
-      this.playWarning = "Warning: Your pet will die from living such a lame life";
-    } else if (this.play === 0) {
-      this.playWarning = "Your tamagotchi has critically bored. It will now lose food and sleep points at twice the normal rate";
-      this.alive = false;
-    }
-  }, 20000);
-}
+  calculatePlay() {
+    setInterval(() => {
+      this.play--;
+      if (this.play === 30) {
+        this.playWarning = "Warning: Your pet needs to play soon.";
+      } else if (this.play === 10) {
+        this.playWarning = "Warning: Your pet will die from living such a lame life";
+      } else if (this.play === 0) {
+        this.playWarning = "Your tamagotchi has critically bored. It will now lose food and sleep points at twice the normal rate";
+      }
+    }, 20000);
+  }
+  sleepTamagotchi() {
+    this.sleeping = true
+    setTimeout(() => {
+      this.sleeping = false;
+    }, 600000);
+    this.sleep = 100;
+    console.log("sleep:" + this.sleep)
+    return "all rested!"
+  }
 }
