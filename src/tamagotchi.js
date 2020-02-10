@@ -65,4 +65,10 @@ export class Tamagotchi {
     console.log("sleep:" + this.sleep)
     return "all rested!"
   }
+
+  feedTamagotchi() {
+    this.feed = 100;
+    console.log("food:" + this.food)
+    return "All full!"
+  }
 }

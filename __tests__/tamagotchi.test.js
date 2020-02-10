@@ -148,7 +148,12 @@ describe('Should create new tamagotchi', () => {
   test("Should reset sleep stat to 100", () => {
     jest.advanceTimersByTime(600001);
     expect(tamagotchi.sleepTamagotchi()).toEqual("all rested!")
-  })
+  });
+
+  test("this should reset food stat to 100", () => {
+    expect(tamagotchi.feedTamagotchi()).toEqual("All full!")
+
+  });
 
 
 });
