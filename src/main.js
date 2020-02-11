@@ -7,10 +7,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 $(document).ready(function () {
   let theImage = {};
-  let tamagotchi
-  let celebrity = "";
+  let tamagotchi;
+  let celebrity;
   $("img").on("click", function () {
-    celebrity = event.target.id;
     theImage.image = this.src;
     $("img").addClass("hidden");
     $(".name-form").removeClass("hidden");
@@ -24,7 +23,7 @@ $(document).ready(function () {
     $("#pickAFriend").hide;
     $(".name-form").hide();
     $("#celebrity-img").html('<img src="' + theImage.image + '"></img>')
-    $("#celebrity-name").html(tamagotchi.celebrity);
+    $(".celebrity-name").html(tamagotchi.name);
     $("#user-food").html(tamagotchi.food);
     $("#food-warning").html(tamagotchi.foodWarning);
     $("#user-play").html(tamagotchi.play);
@@ -64,9 +63,17 @@ $(document).ready(function () {
     tamagotchi.calculatePlay();
     setInterval(() => {
       $("#user-food").html(tamagotchi.food);
-      $("#food-warning").html(tamagotchi.foodWarning);
+      if (tamagotchi.food > 30) {
+        $("#food-warning").html("");
+      } else if (tamagotchi.food <= 30) {
+        $("#food-warning").html(tamagotchi.foodWarning);
+      }
       $("#user-play").html(tamagotchi.play);
-      $("#play-warning").html(tamagotchi.playWarning);
+      if (tamagotchi.play > 30) {
+        $("#play-warning").html("");
+      } else if (tamagotchi.play <= 30) {
+        $("#play-warning").html(tamagotchi.playWarning);
+      }
       $("#user-sleep").html(tamagotchi.sleep);
       $("#sleep-warning").html(tamagotchi.sleepWarning);
       if (tamagotchi.sleeping === false) {

@@ -18,3 +18,7 @@ img {
 .sleeping {
   opacity: .5;
 }
+
+.warning {
+  color: red;
+}
