@@ -26,6 +26,18 @@ $(document).ready(function() {
     $("#pickAFriend").hide;
     $(".name-form").hide();
     $("#celebrity-img").html('<img src="' + theImage.image + '"></img>');
+
+    console.log()
+
+    $("#celebrity-name").html(tamagotchi.celebrity);
+    $("#user-food").html(tamagotchi.food);
+    $("#food-warning").html(tamagotchi.foodWarning);
+    $("#user-play").html(tamagotchi.play);
+    $("#play-warning").html(tamagotchi.playWarning);
+    $("#user-sleep").html(tamagotchi.sleep);
+    $("#sleep-warning").html(tamagotchi.sleepWarning);
+
+
     $("#statboard").show();
     event.preventDefault();
   });
