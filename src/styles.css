@@ -12,6 +12,18 @@ body {
   display: none;
 }
 
+/* .img-thumbnail img {
+  width: 100%;
+  height: 175px;
+  border-radius: 3rem;
+} */
+
+#pickAFriend img {
+  width: 100%;
+  height: 175px;
+  border-radius: 3rem;
+}
+
 img {
   width: 100%;
 }
