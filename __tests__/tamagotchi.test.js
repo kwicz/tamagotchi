@@ -158,4 +158,5 @@ describe('Should create new tamagotchi', () => {
     expect(tamagotchi.playTamagotchi()).toEqual("All tuckered out!")
   });
 
+
 });

@@ -1,16 +1,20 @@
 
 // Create base values for user
 export class Tamagotchi {
-  constructor(name, food, play, sleep) {
+  constructor(name, celebrity) {
     this.name = name;
-    this.food = food;
-    this.play = play;
-    this.sleep = sleep;
+    this.celebrity = celebrity;
+    this.food = 100;
+    this.play = 100;
+    this.sleep = 100;
     this.sleeping = false;
     this.alive = true;
     this.sleepWarning = "";
     this.foodWarning = "";
     this.playWarning = "";
+    this.sleepTimer = 30000;
+    this.foodTimer = 10000;
+    this.playTimer = 20000;
   }
 
   calculateSleep() {
@@ -25,10 +29,9 @@ export class Tamagotchi {
           this.sleeping = true;
           this.sleepWarning = "Your tamagotchi passed out.";
         }
-      }, 30000);
+      }, this.sleepTimer);
     }
   }
-
 
   calculateFood() {
     setInterval(() => {
@@ -41,7 +44,7 @@ export class Tamagotchi {
         this.foodWarning = "Your tamagotchi has died.";
         this.alive = false;
       }
-    }, 10000);
+    }, this.foodTimer);
   }
 
   calculatePlay() {
@@ -53,28 +56,30 @@ export class Tamagotchi {
         this.playWarning = "Warning: Your pet will die from living such a lame life";
       } else if (this.play === 0) {
         this.playWarning = "Your tamagotchi has critically bored. It will now lose food and sleep points at twice the normal rate";
+        this.sleepTimer = this.sleepTimer / 2;
+        this.foodTimer = this.foodTimer / 2;
       }
-    }, 20000);
+    }, this.playTimer);
   }
+
   sleepTamagotchi() {
-    this.sleeping = true
+    this.sleeping = true;
     setTimeout(() => {
       this.sleeping = false;
     }, 600000);
     this.sleep = 100;
-    console.log("sleep:" + this.sleep)
-    return "all rested!"
+    return "all rested!";
   }
 
   feedTamagotchi() {
     this.feed = 100;
-    console.log("food:" + this.food)
-    return "All full!"
+    return "All full!";
   }
 
   playTamagotchi() {
     this.play = 100;
-    console.log("food:" + this.food)
-    return "All tuckered out!"
+    this.sleepTimer = this.sleepTimer * 2;
+    this.foodTimer = this.foodTimer * 2;
+    return "All tuckered out!";
   }
 }
