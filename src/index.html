@@ -47,36 +47,39 @@
     <div class="container name-form hidden">
       <div class="row">
         <div class="col-md-4">
-        <div id="celebrity"></div>
+          <div id="celebrity"></div>
         </div>
         <div class="col-md-8">
-      <form>
-        <div class="form-group">
-          <label for="name">What would you like to call your Tamagotchi?</label>
-          <input type="text" id="name" class="form-control" placeholder="Tamagotchi Name">
-          <br>
-          <button class="btn btn-info" data-toggle="modal" data-target="#myModal">Meet your friend!</button>
+          <form>
+            <div class="form-group">
+              <label for="name">What would you like to call your Tamagotchi?</label>
+              <input type="text" id="name" class="form-control" placeholder="Tamagotchi Name">
+              <br>
+              <button class="btn btn-info" id="name-button" data-toggle="modal" data-target="#myModal">Meet your friend!</button>
+            </div>
+          </form>
         </div>
-      </form>
       </div>
     </div>
-    </div>
+
     <div id="statboard" class="hidden">
       <div class="row">
         <div class="col-md-4">
-          <h2>Take care of <span class="celebrity-name"></span></h2>
-          <hr>
-          <form>
-          <div class="form-group">
-            <button class="btn btn-info" type="button" id="feed-button">Feed</button>
+          <div class="card" id="care-buttons">
+            <h2>Take care of <span class="celebrity-name"></span></h2>
+            <hr>
+            <form>
+              <div class="form-group">
+                <button class="btn btn-info btn-block" type="button" id="feed-button">Feed</button>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-info btn-block" type="button" id="play-button">Play</button>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-info btn-block" type="button" id="sleep-button">Sleep</button>
+              </div>
+            </form>
           </div>
-          <div class="form-group">
-            <button class="btn btn-info" type="button" id="play-button">Play</button>
-          </div>
-          <div class="form-group">
-            <button class="btn btn-info" type="button" id="sleep-button">Sleep</button>
-          </div>
-        </form>
         </div>
         <div class="col-md-4">
           <span id="celebrity-img"></span>
@@ -84,20 +87,34 @@
           <span id="celebrity-giphy"></span>
         </div>
         <div class="col-md-4">
-          <h2><span class="celebrity-name"></span>'s Health</h2>
-          <hr>
-          <p>Food: <span id="user-food"></span></p>
-          <p><span id="food-warning" class="warning"></span></p>
-          <p>Play: <span id="user-play"></span></p>
-          <p><span id="play-warning" class="warning"></span></p>
-          <p>Sleep: <span id="user-sleep"></span></p>
-          <p><span id="sleep-warning" class="warning"></span></p>
+          <div class="card" id="health-bars">
+            <h2><span class="celebrity-name"></span>'s Health</h2>
+            <hr>
+            <p>Food:</p>
+            <div class="progress">
+                <div id="user-food" class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <p><span id="food-warning" class="warning"></span></p>
+            <p>Play:</p>
+            <div class="progress">
+                <div id="user-play" class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <p><span id="play-warning" class="warning"></span></p>
+            <p>Sleep:</p>
+            <div class="progress">
+                <div id="user-sleep" class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <p><span id="sleep-warning" class="warning"></span></p>
+          </div>
         </div>
       </div>
       
     </div>
   </div>
-
+  
+  <div id="death">
+    <img src="https://wordbrothel.com/wp-content/uploads/2019/05/TomagotchyaJournalism.jpg" alt="Death screen">
+  </div>
 
 <!-- Modal -->
 <div class="container">

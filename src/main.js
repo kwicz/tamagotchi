@@ -45,6 +45,7 @@ $(document).ready(function () {
 
   $("#feed-button").click(function () {
     tamagotchi.feedTamagotchi();
+    if (tamagotchi.sleeping === false) {
     fetch(`https://api.giphy.com/v1/gifs/random?api_key=16K2KFYaMNWT2AMqTX6XNq84YoY6GtGm&tag=${celebrity}&eating
     `)
     .then(function(response) {
@@ -58,13 +59,15 @@ $(document).ready(function () {
       setTimeout(() => {
         $("#celebrity-img").html('<img src="' + theImage.image + '"></img>');
       }, 2000);
-
-
     };
+
+
+    }
   });
 
   $("#play-button").click(function () {
     tamagotchi.playTamagotchi();
+    if (tamagotchi.sleeping === false) {
     fetch(`https://api.giphy.com/v1/gifs/random?api_key=16K2KFYaMNWT2AMqTX6XNq84YoY6GtGm&tag=${celebrity}&playing
     `)
     .then(function(response) {
@@ -79,10 +82,12 @@ $(document).ready(function () {
         $("#celebrity-img").html('<img src="' + theImage.image + '"></img>');
       }, 2000);
     }
+    }
   })
 
   $("#sleep-button").click(function () {
     tamagotchi.sleepTamagotchi();
+    if (tamagotchi.sleeping === false) {
     $("#feed-button").addClass("sleeping");
     $("#play-button").addClass("sleeping");
     $("#sleep-button").addClass("sleeping");
@@ -101,6 +106,7 @@ $(document).ready(function () {
         $("#celebrity-img").html('<img src="' + theImage.image + '"></img>');
       }, 2000);
     }
+    }
   });
 
   $("#modal-button").click(function () {
@@ -109,18 +115,27 @@ $(document).ready(function () {
     tamagotchi.calculatePlay();
     setInterval(() => {
       $("#user-food").html(tamagotchi.food);
+      $("#user-food").css("width", tamagotchi.food + "%");
       if (tamagotchi.food > 30) {
         $("#food-warning").html("");
       } else if (tamagotchi.food <= 30) {
         $("#food-warning").html(tamagotchi.foodWarning);
+        if (tamagotchi.food === 0) {
+          tamagotchi.sleep = 0;
+          tamagotchi.play = 0;
+        //   $("#statboard").hide();
+        //   $("#death").show();
+        }
       }
       $("#user-play").html(tamagotchi.play);
+      $("#user-play").css("width", tamagotchi.play + "%");
       if (tamagotchi.play > 30) {
         $("#play-warning").html("");
       } else if (tamagotchi.play <= 30) {
         $("#play-warning").html(tamagotchi.playWarning);
       }
       $("#user-sleep").html(tamagotchi.sleep);
+      $("#user-sleep").css("width", tamagotchi.sleep + "%");
       if (tamagotchi.sleep > 30) {
         $("#sleep-warning").html("");
       } else if (tamagotchi.sleep <= 30) {
