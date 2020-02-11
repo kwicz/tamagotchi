@@ -16,12 +16,18 @@ $(document).ready(function() {
     $("img").addClass("hidden");
     $(".name-form").removeClass("hidden");
     $("#celebrity").append($('<img src="' + theImage.image + '"></img>'));
+    $("#pickAFriend").hide();
   });
 
-  $("form").submit(function() {
+  $("form").submit(function(event) {
     const name = $("#name").val();
     let tamagotchi = new Tamagotchi(name, celebrity);
     console.log(tamagotchi);
+    $("#pickAFriend").hide;
+    $(".name-form").hide();
+    $("#celebrity-img").html('<img src="' + theImage.image + '"></img>');
+    $("#statboard").show();
+    event.preventDefault();
   });
 
 
