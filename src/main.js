@@ -10,6 +10,7 @@ $(document).ready(function () {
   let tamagotchi;
   let celebrity;
   $("img").on("click", function () {
+    celebrity = event.target.id;
     theImage.image = this.src;
     $("img").addClass("hidden");
     $(".name-form").removeClass("hidden");
@@ -22,7 +23,7 @@ $(document).ready(function () {
     tamagotchi = new Tamagotchi(name, celebrity);
     $("#pickAFriend").hide;
     $(".name-form").hide();
-    $("#celebrity-img").html('<img src="' + theImage.image + '"></img>')
+    $("#celebrity-img").html('<img src="' + theImage.image + '"></img>');
     $(".celebrity-name").html(tamagotchi.name);
     $("#user-food").html(tamagotchi.food);
     $("#food-warning").html(tamagotchi.foodWarning);
@@ -38,9 +39,23 @@ $(document).ready(function () {
 
   $("#feed-button").click(function () {
     tamagotchi.feedTamagotchi();
-    // $("#user-food").html(tamagotchi.food);
-    console.log(tamagotchi.food);
-  })
+    
+    fetch(`https://api.giphy.com/v1/gifs/qNJwi8AaGcqn6?api_key=16K2KFYaMNWT2AMqTX6XNq84YoY6GtGm`)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(jsonifiedResponse) {
+      getElements(jsonifiedResponse);
+    });
+
+    const getElements = function(response) {
+      
+      $("#celebrity-gif").html(`<img src="${response.data.embed_url}"alt= "gif"></img>`);
+      $("#celebrity-giphy").html(`<img src="${response.data.images.original.url}"alt="gif"></img>`);
+      console.log(response.data.embed_url);
+      console.log(response.data.url);
+    };
+  });
 
   $("#play-button").click(function () {
     tamagotchi.playTamagotchi();
@@ -75,7 +90,11 @@ $(document).ready(function () {
         $("#play-warning").html(tamagotchi.playWarning);
       }
       $("#user-sleep").html(tamagotchi.sleep);
-      $("#sleep-warning").html(tamagotchi.sleepWarning);
+      if (tamagotchi.sleep > 30) {
+        $("#sleep-warning").html("");
+      } else if (tamagotchi.sleep <= 30) {
+        $("#sleep-warning").html(tamagotchi.sleepWarning);
+      }
       if (tamagotchi.sleeping === false) {
         $("#feed-button").removeClass("sleeping");
         $("#play-button").removeClass("sleeping");
@@ -87,6 +106,5 @@ $(document).ready(function () {
       }
     }, 1000);
   });
-
 
 });
