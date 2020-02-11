@@ -9,6 +9,12 @@ $(document).ready(function () {
   let theImage = {};
   let tamagotchi;
   let celebrity;
+
+  $("#start").click(function () {
+    $("#landing").addClass("hidden");
+    $("#pickAFriend").removeClass("hidden");
+  })
+
   $("img").on("click", function () {
     celebrity = event.target.id;
     theImage.image = this.src;
@@ -39,21 +45,22 @@ $(document).ready(function () {
 
   $("#feed-button").click(function () {
     tamagotchi.feedTamagotchi();
-    
-    fetch(`https://api.giphy.com/v1/gifs/qNJwi8AaGcqn6?api_key=16K2KFYaMNWT2AMqTX6XNq84YoY6GtGm`)
+    fetch(`https://api.giphy.com/v1/gifs/random?api_key=16K2KFYaMNWT2AMqTX6XNq84YoY6GtGm&tag=${celebrity}&eating
+    `)
     .then(function(response) {
+      console.log(response);
       return response.json();
     })
     .then(function(jsonifiedResponse) {
       getElements(jsonifiedResponse);
     });
-
     const getElements = function(response) {
-      
-      $("#celebrity-gif").html(`<img src="${response.data.embed_url}"alt= "gif"></img>`);
-      $("#celebrity-giphy").html(`<img src="${response.data.images.original.url}"alt="gif"></img>`);
-      console.log(response.data.embed_url);
-      console.log(response.data.url);
+      $("#celebrity-img").html(`<img src="${response.data.images.original.url}"alt="gif"></img>`);
+      setTimeout(() => {
+        $("#celebrity-img").html('<img src="' + theImage.image + '"></img>');
+      }, 2000);
+
+
     };
   });
 
