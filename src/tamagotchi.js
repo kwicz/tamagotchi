@@ -66,20 +66,27 @@ export class Tamagotchi {
     this.sleeping = true;
     setTimeout(() => {
       this.sleeping = false;
-    }, 600000);
+    }, 5000);
     this.sleep = 100;
+    this.sleepWarning = undefined;
     return "all rested!";
   }
 
   feedTamagotchi() {
-    this.feed = 100;
-    return "All full!";
+    if (this.sleeping === false) {
+      this.food = 100;
+      this.feedWarning = undefined;
+      return "All full!";
+    }
   }
 
   playTamagotchi() {
-    this.play = 100;
-    this.sleepTimer = this.sleepTimer * 2;
-    this.foodTimer = this.foodTimer * 2;
-    return "All tuckered out!";
+    if (this.sleeping === false) {
+      this.play = 100;
+      this.playWarning = undefined;
+      this.sleepTimer = this.sleepTimer * 2;
+      this.foodTimer = this.foodTimer * 2;
+      return "All tuckered out!";
+    }
   }
 }
