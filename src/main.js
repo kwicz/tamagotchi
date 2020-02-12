@@ -12,6 +12,7 @@ $(document).ready(function () {
 
   $("#start").click(function () {
     $("#landing").addClass("hidden");
+    $("#start").hide();
     $("#pickAFriend").removeClass("hidden");
   });
 
@@ -155,5 +156,4 @@ $(document).ready(function () {
   $("#again").click(function () {
     window.location.reload();
   });
-
 });

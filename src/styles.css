@@ -1,3 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Modak&display=swap');
+
+#landing h1 {
+  font-family: 'Modak';
+  font-size: 150px;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(0.03, rgb(250,3,3)),
+    color-stop(0.52, rgb(240,255,127)),
+    color-stop(0.76, rgb(42,24,173))
+);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 body {
   background: rgb(241,174,240);
   background: radial-gradient(circle, rgba(241,174,240,1) 35%, rgba(140,236,255,1) 100%);
