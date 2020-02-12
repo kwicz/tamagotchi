@@ -12,9 +12,11 @@
     <div class="container" id="landing">
       <h1>Tamagotchi</h1>
       <div class="form-group">
-          <button class="btn btn-info" type="button" id="start">Start</button>
+          <button class="btn btn-info" type="button" id="start"><img src="https://cdn3.iconfinder.com/data/icons/90-s-stuff/674/tamagotchi_game_pet_retro_digital-512.png" alt=""></button>
         </div>
     </div>
+
+    <!-- https://image.shutterstock.com/image-vector/tamagotchi-background-design-260nw-1095631739.jpg -->
     
     <div class="container hidden" id="pickAFriend">
       <div class="container">
@@ -111,10 +113,6 @@
       
     </div>
   </div>
-  
-  <div id="death">
-    <img src="https://wordbrothel.com/wp-content/uploads/2019/05/TomagotchyaJournalism.jpg" alt="Death screen">
-  </div>
 
 <!-- Modal -->
 <div class="container">
@@ -138,6 +136,37 @@
           <!-- Modal footer -->
           <div class="modal-footer">
             <button type="button" class="btn btn-info" data-dismiss="modal" id="modal-button">Go!</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- Modal -->
+<div class="container">
+  
+    <!-- The Modal -->
+    <div class="modal" id="death-modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+        
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Game Over</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          
+          <!-- Modal body -->
+          <div class="modal-body">
+            You let your baby die :(
+              <img src="https://wordbrothel.com/wp-content/uploads/2019/05/TomagotchyaJournalism.jpg" alt="Death screen"> 
+          </div>
+          
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-info" data-dismiss="modal" id="again">Play Again?</button>
           </div>
           
         </div>

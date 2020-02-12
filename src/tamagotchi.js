@@ -19,19 +19,19 @@ export class Tamagotchi {
 
   calculateSleep() {
     if (this.sleeping === false) {
-        setInterval(() => {
-          if (this.sleep > 0) {
-            this.sleep--;
-          }
-          if (this.sleep === 30) {
-            this.sleepWarning = "Warning: Your pet needs to sleep soon.";
-          } else if (this.sleep === 10) {
-            this.sleepWarning = "Warning: Your pet will pass out from exhaustion.";
-          } else if (this.sleep === 0) {
-            this.sleepTamagotchi();
-            this.sleepWarning = "Your tamagotchi passed out.";
-          }
-        }, this.sleepTimer);
+      setInterval(() => {
+        if (this.sleep > 0) {
+          this.sleep--;
+        }
+        if (this.sleep === 30) {
+          this.sleepWarning = "Warning: Your pet needs to sleep soon.";
+        } else if (this.sleep === 10) {
+          this.sleepWarning = "Warning: Your pet will pass out from exhaustion.";
+        } else if (this.sleep === 0) {
+          this.sleepTamagotchi();
+          this.sleepWarning = "Your tamagotchi passed out.";
+        }
+      }, this.sleepTimer);
     }
   }
 
@@ -51,7 +51,7 @@ export class Tamagotchi {
         this.alive = false;
       }
     }, this.foodTimer);
-  
+
   }
 
   calculatePlay() {

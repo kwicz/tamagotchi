@@ -13,12 +13,11 @@ $(document).ready(function () {
   $("#start").click(function () {
     $("#landing").addClass("hidden");
     $("#pickAFriend").removeClass("hidden");
-  })
+  });
 
   $("img").on("click", function () {
     celebrity = event.target.id;
     theImage.image = this.src;
-    $("img").addClass("hidden");
     $(".name-form").removeClass("hidden");
     $("#celebrity").append($('<img src="' + theImage.image + '"></img>'));
     $("#pickAFriend").hide();
@@ -46,66 +45,64 @@ $(document).ready(function () {
   $("#feed-button").click(function () {
     tamagotchi.feedTamagotchi();
     if (tamagotchi.sleeping === false) {
-    fetch(`https://api.giphy.com/v1/gifs/random?api_key=16K2KFYaMNWT2AMqTX6XNq84YoY6GtGm&tag=${celebrity}&eating
+      fetch(`https://api.giphy.com/v1/gifs/random?api_key=16K2KFYaMNWT2AMqTX6XNq84YoY6GtGm&tag=${celebrity}&eating
     `)
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(jsonifiedResponse) {
-      getElements(jsonifiedResponse);
-    });
-    const getElements = function(response) {
-      $("#celebrity-img").html(`<img src="${response.data.images.original.url}"alt="gif"></img>`);
-      setTimeout(() => {
-        $("#celebrity-img").html('<img src="' + theImage.image + '"></img>');
-      }, 2000);
-    };
-
-
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (jsonifiedResponse) {
+          getElements(jsonifiedResponse);
+        });
+      const getElements = function (response) {
+        $("#celebrity-img").html(`<img src="${response.data.images.original.url}"alt="gif"></img>`);
+        setTimeout(() => {
+          $("#celebrity-img").html('<img src="' + theImage.image + '"></img>');
+        }, 2000);
+      };
     }
   });
 
   $("#play-button").click(function () {
     tamagotchi.playTamagotchi();
     if (tamagotchi.sleeping === false) {
-    fetch(`https://api.giphy.com/v1/gifs/random?api_key=16K2KFYaMNWT2AMqTX6XNq84YoY6GtGm&tag=${celebrity}&playing
+      fetch(`https://api.giphy.com/v1/gifs/random?api_key=16K2KFYaMNWT2AMqTX6XNq84YoY6GtGm&tag=${celebrity}&playing
     `)
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(jsonifiedResponse) {
-      getElements(jsonifiedResponse);
-    });
-    const getElements = function(response) {
-      $("#celebrity-img").html(`<img src="${response.data.images.original.url}"alt="gif"></img>`);
-      setTimeout(() => {
-        $("#celebrity-img").html('<img src="' + theImage.image + '"></img>');
-      }, 2000);
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (jsonifiedResponse) {
+          getElements(jsonifiedResponse);
+        });
+      const getElements = function (response) {
+        $("#celebrity-img").html(`<img src="${response.data.images.original.url}"alt="gif"></img>`);
+        setTimeout(() => {
+          $("#celebrity-img").html('<img src="' + theImage.image + '"></img>');
+        }, 2000);
+      };
     }
-    }
-  })
+  });
 
   $("#sleep-button").click(function () {
     tamagotchi.sleepTamagotchi();
     if (tamagotchi.sleeping === false) {
-    $("#feed-button").addClass("sleeping");
-    $("#play-button").addClass("sleeping");
-    $("#sleep-button").addClass("sleeping");
-    $("#user-sleep").html(tamagotchi.sleep);
-    fetch(`https://api.giphy.com/v1/gifs/random?api_key=16K2KFYaMNWT2AMqTX6XNq84YoY6GtGm&tag=${celebrity}&sleeping
+      $("#feed-button").addClass("sleeping");
+      $("#play-button").addClass("sleeping");
+      $("#sleep-button").addClass("sleeping");
+      $("#user-sleep").html(tamagotchi.sleep);
+      fetch(`https://api.giphy.com/v1/gifs/random?api_key=16K2KFYaMNWT2AMqTX6XNq84YoY6GtGm&tag=${celebrity}&sleeping
     `)
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(jsonifiedResponse) {
-      getElements(jsonifiedResponse);
-    });
-    const getElements = function(response) {
-      $("#celebrity-img").html(`<img src="${response.data.images.original.url}"alt="gif"></img>`);
-      setTimeout(() => {
-        $("#celebrity-img").html('<img src="' + theImage.image + '"></img>');
-      }, 2000);
-    }
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (jsonifiedResponse) {
+          getElements(jsonifiedResponse);
+        });
+      const getElements = function (response) {
+        $("#celebrity-img").html(`<img src="${response.data.images.original.url}"alt="gif"></img>`);
+        setTimeout(() => {
+          $("#celebrity-img").html('<img src="' + theImage.image + '"></img>');
+        }, 2000);
+      };
     }
   });
 
@@ -121,10 +118,12 @@ $(document).ready(function () {
       } else if (tamagotchi.food <= 30) {
         $("#food-warning").html(tamagotchi.foodWarning);
         if (tamagotchi.food === 0) {
-          tamagotchi.sleep = 0;
-          tamagotchi.play = 0;
-        //   $("#statboard").hide();
-        //   $("#death").show();
+          setTimeout(() => {
+            tamagotchi.sleep = 0;
+            tamagotchi.play = 0;
+            $("#statboard").hide();
+            $("#death-modal").show();
+          }, 2000);
         }
       }
       $("#user-play").html(tamagotchi.play);
@@ -151,6 +150,10 @@ $(document).ready(function () {
         $("#sleep-button").addClass("sleeping");
       }
     }, 1000);
+  });
+
+  $("#again").click(function () {
+    window.location.reload();
   });
 
 });
