@@ -3,7 +3,7 @@
 #### _Care for a Tamagotchi creature by feeding it, playing with it, and making sure it gets enough sleep. | Feb. 2020_
 
 #### By _**Alex Skreen and K. Wicz**_
-[link to demo site coming](#)
+[Play Now!]( https://kwicz.github.io/tamagotchi/)
 
 ## Description
 
